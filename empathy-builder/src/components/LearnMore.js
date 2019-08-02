@@ -1,22 +1,23 @@
 import React from 'react';
 import Footer from "./Footer";
 
-/*phantom div to allocate layout space for the navbar*/
-const phantom = {
-  display: 'block',
-  padding: '3rem',
-  height: '60px',
-  width: '100%',
-};
+import styled from "styled-components";
+import Container from '@material-ui/core/Container';
+import { Phantom } from '../styled-components/index'
+
+/*Styled Components*/
+const H1 = styled.h1`
+    font-size: 3rem;
+`
 
 export default function LearnMore() {
 
   return (
-    <div>
-      <div style={phantom} />
-     <h2>Resources</h2>
+    <Container>
+      <Phantom/>
+     <H1>Resources</H1>
       <Footer/>
-    </div>
+    </Container>
   )
 
 }

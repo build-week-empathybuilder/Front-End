@@ -4,37 +4,39 @@ import styled from 'styled-components';
 
 import { signup } from '../actions';
 
-
 import { PageContainer, 
     LoginContainer, 
     LoginHeader, 
     FormContainer, 
-    InputContainer} from '../styled-components';
+    InputContainer, Button} from '../styled-components';
+import Footer from "./Footer";
 
 
 const SignUpContainer = styled(LoginContainer)`
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
 `
 
 const SignUpForm = styled(FormContainer)`
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
     align-items: center;
     margin-right: 15px;
+    max-width: 600px;
 
-    button{
-        width: 70%;
-        height: 30px;
-    }
+
+/*    button{
+        width: 30%;
+        height: auto;
+    }*/
 `
 
 const SignUpInputs = styled(InputContainer)`
     margin-top: 20px;
     display: flex;
-    flex-flow: column nowrap;
-
+    flex-flow: column wrap;
+  
     input{
         width: 300px;
     }
@@ -103,11 +105,11 @@ const SignUp = props => {
                                 />
                         </SignUpInputs>
                     </form>
-                    <button className="Login-button" onClick={signup}>Sign Up</button>
+                    <Button className="Login-button" onClick={signup}>Sign Up</Button>
                 </SignUpForm>
                 
             </SignUpContainer>
-            
+            <Footer/>
         </PageContainer>
     )
 };

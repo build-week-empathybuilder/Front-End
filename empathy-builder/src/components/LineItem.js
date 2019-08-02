@@ -1,24 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'antd';
 import styled from 'styled-components';
+import { H2, H3, H4 } from '../styled-components/index'
 
-
-/*const Item = styled.div`
-    width: 90%;
-    height: auto;
-    background-color: #66ccda;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: baseline;
-    margin: 5px 5px;
-    border-radius: 4px;
-    text-align: left;
-    &:hover{
-        background-color: #9ddee7;
-        transition-duration: 0.2s;
-    }
-`*/
 
 const Item = styled.div`
     width: 90%;
@@ -31,9 +15,9 @@ const Item = styled.div`
     align-items: baseline;
     margin: 5px 5px;
     border-radius: 4px;
-    text-align: left;
+
     &:hover{
-        background-color: #FEBAED;
+        background-color: #AFF3C1;
         transition-duration: 0.2s;
     }
 `
@@ -89,16 +73,17 @@ const LineItem = props => {
         
         <>
             <Item onClick={() => setModalVisible(!modalVisible)} value={categorySum} name={props.category.name}>
-                <h2>{props.category.name}</h2>
-                <h2>${categorySum}</h2>
+                <H2>{props.category.name}</H2>
+                <H2>${categorySum}</H2>
             </Item>
             <Modal
             title={props.category.name}
             visible={modalVisible}
             onOk={e => handleModal(e)}
             onCancel={handleCancel}
+            style={{backgroundColor: 'mediumpurple'}}
             >
-            <h3>Things to consider: </h3>
+            <H3>Things to consider: </H3>
                 {props.category.categories.map(category => {
                     
                 return(

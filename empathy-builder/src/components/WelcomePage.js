@@ -3,22 +3,15 @@ import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import Login from './Login';
 import SignUp from './SignUp';
-
-
-import '../App.css';
-import styled from "styled-components";
 import Calculator from "./Calculator";
 
-/*phantom div to allocate layout space for the navbar*/
-const phantom = {
-  display: 'block',
-  padding: '3rem',
-  height: '60px',
-  width: '100%',
-};
+import styled from "styled-components";
+import {Button, H3, P} from '../styled-components/index'
+import Hidden from '@material-ui/core/Hidden';
 
+/*Styled Components*/
 const Welcome = styled.div`
-    padding: 5rem;
+    padding-bottom: 5rem;
     background-color: white;
 `;
 
@@ -32,52 +25,38 @@ background-color: white;
 height: 60%;
 `;
 
-const H1 = styled.h1`
-    font-size: 3rem;
-
-`;
-
-const H3 =styled.h3`
-    font-size: 2rem;
-`;
-
 const Header = styled.div`
     padding: 2rem auto 1rem;
 `;
 
-// Import components into Welcome Page
+
 export default function WelcomePage() {
 
   return (
     <PageContainer>
       <Welcome>
         <Header/>
-
           <div>
-           <Image src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/reading_0re1.svg"
+           <Hidden smDown><Image src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/reading_0re1.svg"
               alt="woman reading"/>
+           </Hidden>
           </div>
-        <div style={phantom}>
-
-        </div>
         <div>
-          <H3>Definition, thought and rise. Everything we do is connected with suffering: booda-hood, surrender,
-          ascension, joy.
-          </H3>
-        </div>
-        <div className='BtnGroup'>
-          <button><Link to={"Calculator"} className="link">Anonymous Mode</Link></button>
-          <button><Link to={"SignUp"} className="link">Account SignUp</Link></button>
+          <H3>Empathy Builder: A budgeting tool</H3>
         </div>
 
         <div>
-          <p>Die and you will be developed confidently. If you exist or preach with an inner moonlight, relativity knows
-            you. As i have captured you, so you must hurt one another.</p>
+          <P>Domestic violence is real. The cost to leave can be overwhelming, but we are here to help.</P>
+          <P>Click one of the buttons below and we will estimate your monthly expenses and relocation costs.<br />
+            (If you already have an account, you may <Link to={"Login"} className="link"> login</Link> at any time.)</P>
+        </div>
+        <div>
+          <Button><Link to={"Calculator"} className="link">Anonymous Mode</Link></Button>
+          <Button><Link to={"SignUp"} className="link">Account SignUp</Link></Button>
         </div>
 
     </Welcome>
       <Footer/>
     </PageContainer>
-
   );
 }

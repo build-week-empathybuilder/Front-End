@@ -16,7 +16,7 @@ export const LoginContainer = styled.div`
     box-shadow: 0 0 37px 5px #00000017;
     display: flex;
     flex-flow: row nowrap;
-    align-items: baseline
+    align-items: baseline;
     justify-content: space-evenly;
 `
 
@@ -25,11 +25,6 @@ export const LoginHeader = styled.div`
     flex-flow: column nowrap;
     align-items: center;
 
-    h1{
-        font-size: 1.6rem;
-        margin: 0;
-        color: #602350;
-    }
     p{
         width: 80%;
         font-size: 1.2rem;
@@ -42,9 +37,9 @@ export const FormContainer = styled.div`
     justify-content: space-evenly;
  
     button{
-        width: 2rem;
+        height: auto;
         border-radius: 8px;
-        background-color: #66ccda;
+        background-color:  #654EB0;
         margin-left: 15px;
         margin-bottom: 10px;
         color: #ededed;
@@ -65,7 +60,7 @@ export const InputContainer = styled.div`
     label{
         font-size: 1.3rem;
         color: #1C1C1C;
-        margin-left: 5px;
+        margin-left: 10px;
     }
     input{
         border-radius: 8px;
@@ -76,5 +71,76 @@ export const InputContainer = styled.div`
         margin-bottom: 10px;
         margin-left: 4px;
         font-size: 20px;
+        color:#654EB0;
+        padding: .5rem;
+`
+
+/*Phantom div to allocate layout space for the navbar*/
+export const Phantom = styled.div`
+  padding: 3rem;
+  height: 60px;
+  width: 100%;
+`
+
+export const H1 = styled.h1`
+    font-size: 3rem;
+`
+
+export const H2 = styled.h2`
+  font-size: 2.7rem;
+  color: white;
+      @media (max-width: 768px) {
+        font-size: 2rem;
     }
+`
+
+export const H3 = styled.h3`
+  font-size: 2.5rem;
+  color: #654EB0;
+`
+export const H4 = styled.h4`
+  font-size: 2rem;
+  color: #654EB0;
+`
+
+export const H5 = styled.h5`
+    font-size: 1.6rem;
+        color: #3d3c3a;
+`
+
+export const P = styled.p`
+    font-size: 1.5rem;
+    color: #3d3c3a;
+`
+
+
+export const Button = styled.button`
+  border-radius: 8px;
+  padding: 0.2rem 1.6rem;
+  margin: 0.8rem 1.4rem;
+  width: auto;
+  background: #654EB0;
+  font-size: 1.2rem;
+  border: 2px solid #654EB0;
+  box-shadow: 0px 10px 14px -7px #654eb0;
+  color: white;
+
+    .active{
+        font-weight: bold;
+        text-decoration: none;
+        color: #f9bbb1;
+    }
+
+    a{
+        color: white;
+        margin: 0px 20px;
+        font-size: 1.4rem;
+        text-decoration: none;
+        &:hover{
+            color: #654EB0;
+            transition-duration: 0.2s;
+            text-decoration: underline;
+        }
+        }
+
 `
